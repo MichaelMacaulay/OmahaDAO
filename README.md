@@ -1,15 +1,5 @@
-# Basic Sample Hardhat Project
+# Omaha DAO
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Omaha DAO is a decentralized autonomous organization that with the goal of becoming the [Berkshire Hathaway](https://en.wikipedia.org/wiki/Berkshire_Hathaway) of crypto.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+You can learn more about the DAO [here](https://app.gitbook.com/o/NAZMh8EsRaFHGdM710PN/s/4lfbspU5oHHXomXe7FEh/).
