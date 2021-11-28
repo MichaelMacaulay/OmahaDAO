@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
-contract OmahaDAO is
+contract stakedOmahaDAO is
     ERC20,
     ERC20Snapshot,
     Ownable,
@@ -16,14 +16,16 @@ contract OmahaDAO is
     ERC20Permit,
     ERC20Votes
 {
-    constructor() ERC20("Omaha DAO", "sBRKA") ERC20Permit("Omaha DAO") {
+    constructor() ERC20("staked Omaha DAO", "sBRKA") ERC20Permit("Omaha DAO") {
         _mint(msg.sender, 100000000 * 10**decimals());
     }
 
+    // Creates a snapshot of all the token holders
     function snapshot() public onlyOwner {
         _snapshot();
     }
 
+    // Ability to pause - only for emergencies by the contract creator
     function pause() public onlyOwner {
         _pause();
     }
@@ -32,10 +34,12 @@ contract OmahaDAO is
         _unpause();
     }
 
+    // Ability to create more tokens in criculation
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
+    // Hook called before any transfer of tokens including minting & burning
     function _beforeTokenTransfer(
         address from,
         address to,
